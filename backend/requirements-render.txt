@@ -1,0 +1,40 @@
+# Lightweight requirements for Render deployment
+# This excludes heavy dependencies that cause build issues
+
+flask==3.0.0
+flask-cors==4.0.0
+flask-limiter==3.5.1
+flask-caching==2.3.0
+flask-sqlalchemy==3.1.1
+sqlalchemy==2.0.43
+psycopg2-binary==2.9.9
+
+# Authentication dependencies
+pyjwt==2.8.0
+werkzeug==3.0.1
+
+requests==2.32.3
+python-dotenv==1.0.1
+sentry-sdk==2.14.0
+
+# External providers storage support (optional)
+pymongo==4.10.1
+dnspython==2.7.0
+
+# Web scraping dependencies (lightweight versions)
+beautifulsoup4==4.12.2
+python-dateutil==2.9.0.post0
+# Note: playwright and pandas removed - too heavy for Render free tier
+# If you need scraping, consider using a separate service
+
+gunicorn==21.2.0
+
+# LLM dependencies
+openai>=2.7.1
+
+# Security dependencies
+bleach>=6.0.0
+
+# Search dependencies (optional - will gracefully fail if unavailable)
+elasticsearch>=8.0.0,<9.0.0
+
