@@ -1,5 +1,9 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Fix for Vercel: Set output file tracing root to frontend directory
+  outputFileTracingRoot: path.join(__dirname),
   // Disable ESLint during build for deployment (errors are warnings, not blockers)
   eslint: {
     ignoreDuringBuilds: true,
