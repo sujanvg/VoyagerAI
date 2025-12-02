@@ -14,7 +14,11 @@ Usage:
 import requests
 from typing import Optional
 from bs4 import BeautifulSoup
-import pandas as pd
+# Optional imports - gracefully handle if not available
+try:
+    import pandas as pd
+except ImportError:
+    pd = None  # pandas not available
 import time
 import datetime
 from urllib.parse import urljoin, urlparse

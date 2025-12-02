@@ -3,8 +3,16 @@ import argparse, json, os, random, re, time, webbrowser, socket
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
-import pandas as pd
-from playwright.sync_api import sync_playwright
+# Optional imports - gracefully handle if not available
+try:
+    import pandas as pd
+except ImportError:
+    pd = None  # pandas not available
+
+try:
+    from playwright.sync_api import sync_playwright
+except ImportError:
+    sync_playwright = None  # playwright not available
 
 BASE = "https://in.bookmyshow.com"
 FIELDS = ["title","date","time","venue","place","price","url"]

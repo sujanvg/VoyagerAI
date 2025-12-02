@@ -2,14 +2,23 @@ import json
 import random
 import re
 import time
-import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from typing import Optional
 from urllib.parse import urljoin, urlparse
-from playwright.sync_api import sync_playwright
+
+# Optional imports - gracefully handle if not available
+try:
+    import pandas as pd
+except ImportError:
+    pd = None  # pandas not available, scraping features will be limited
+
+try:
+    from playwright.sync_api import sync_playwright
+except ImportError:
+    sync_playwright = None  # playwright not available, scraping features will be limited
 
 # Import the new scrapers
 from .europaticket_scraper import scrape_europaticket_events as scrape_europaticket_events_new
