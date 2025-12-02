@@ -1,6 +1,6 @@
 // API client for VoyagerAI frontend
 // Use centralized apiClient for all requests
-import { apiClient } from './apiClient';
+// Note: apiClient is available for future use if needed
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 
   (typeof window !== 'undefined' ? '' : 'http://localhost:5001');

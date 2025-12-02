@@ -89,7 +89,7 @@ export default function SearchBar({
                 type="button"
                 onClick={() => {
                   setQuery(city);
-                  onSearch(new Event('submit') as any);
+                  onSearch(new Event('submit') as unknown as React.FormEvent);
                 }}
                 className="px-3 py-1 text-xs bg-white/10 text-gray-300 rounded-full hover:bg-blue-500/30 hover:text-white transition-all duration-200"
               >
