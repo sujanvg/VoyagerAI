@@ -8,6 +8,7 @@ flask-caching==2.3.0
 flask-sqlalchemy==3.1.1
 sqlalchemy==2.0.43
 psycopg2-binary==2.9.9
+# Note: If psycopg2-binary fails, try: psycopg2==2.9.9 (requires build tools)
 
 # Authentication dependencies
 pyjwt==2.8.0
